@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chuchai: The Lost Dog</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="game-header">
+    <div class="logo">🐶 <span>CHUCHAI</span></div>
+    <div class="game-status">
+        <div class="mistake-box">
+            <span>❤️ Chuchai's Safety</span>
+            <div class="health-bar"><div id="health-fill"></div></div>
+        </div>
+        <div id="mistake-counter">Mistakes: 0 / 8</div>
+        <button id="music-toggle">🔇 Music Off</button>
+    </div>
+</header>
+
+<div class="progress-container">
+    <div class="progress-line"></div>
+    <div class="progress-dot is-current" data-scene="1"></div>
+    <div class="progress-dot" data-scene="2"></div>
+    <div class="progress-dot" data-scene="3"></div>
+    <div class="progress-dot" data-scene="4"></div>
+    <div class="progress-dot" data-scene="5"></div>
+    <div class="progress-dot" data-scene="6"></div>
+</div>
+
+<audio id="bg-music" loop></audio>
+
+<main class="game">
+
+    <!-- START -->
+
+        <div class="start-card">
+            <div class="big-dog">🐶</div>
+            <h1>CHUCHAI:<br>The Lost Dog</h1>
+            <p>Chuchai was playing happily with his family... until he followed something into the unknown.</p>
+            <p>Can you help Chuchai find his way home?</p>
+            <button class="main-button" id="start-game">🐾 Start Adventure</button>
+        </div>
+
+
+    <!-- SCENE 1 -->
+    <section class="scene" id="scene-1">
+        <div class="scene-background sunny">
+            <div class="story-card">
+                <span class="chapter">SCENE 1 OF 6</span>
+                <h2>🌞 A Happy Day</h2>
+                <p>Chuchai is playing outside with his owners. Suddenly, he sees a butterfly!</p>
+            </div>
+            <div class="game-card">
+                <h3>🎾 What should Chuchai do?</h3>
+                <div class="choices">
+                    <button class="choice correct-choice" data-correct="true" data-message="Good choice! Chuchai stays close to his family."><span>👨‍👩‍👦</span><strong>Stay with his owners</strong><small>Stay where his family can see him.</small></button>
+                    <button class="choice" data-message="Chuchai runs after the butterfly and gets farther away from home!"><span>🦋</span><strong>Run after the butterfly</strong><small>Follow the butterfly into the distance.</small></button>
+                    <button class="choice" data-message="Chuchai wanders away looking for something interesting."><span>🌳</span><strong>Explore the forest</strong><small>Leave the yard and explore.</small></button>
+                </div>
+                <p class="feedback"></p>
+                <button class="next-button locked" data-next="scene-2">Continue ▶</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- SCENE 2 -->
+    <section class="scene" id="scene-2">
+        <div class="scene-background forest">
+            <div class="story-card">
+                <span class="chapter">SCENE 2 OF 6</span>
+                <h2>🌳 Chuchai Gets Lost</h2>
+                <p>He followed the butterfly farther than expected and can't see his family anymore.</p>
+            </div>
+            <div class="game-card">
+                <h3>🗺️ Where should Chuchai go?</h3>
+                <div class="choices">
+                    <button class="choice correct-choice" data-correct="true" data-message="Chuchai remembers the neighborhood and heads toward a familiar place."><span>🏘️</span><strong>Go toward the neighborhood</strong><small>Look for a familiar place.</small></button>
+                    <button class="choice" data-message="The deep forest is dangerous."><span>🌲</span><strong>Go deeper into the forest</strong><small>Search in the woods.</small></button>
+                    <button class="choice" data-message="The road is unfamiliar and risky."><span>🛣️</span><strong>Follow the strange road</strong><small>Maybe it leads somewhere.</small></button>
+                </div>
+                <p class="feedback"></p>
+                <button class="next-button locked" data-next="scene-3">Continue ▶</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- SCENE 3 -->
+    <section class="scene" id="scene-3">
+        <div class="scene-background neighborhood">
+            <div class="story-card">
+                <span class="chapter">SCENE 3 OF 6</span>
+                <h2>🔎 Find the Clues</h2>
+                <p>Maybe there are clues that can help him remember where his home is.</p>
+            </div>
+            <div class="game-card">
+                <h3>🔎 Which clue reminds Chuchai of home?</h3>
+                <p class="instruction">Choose clues one at a time. You need to find all 3 correct clues.</p>
+                <div class="clue-grid">
+                    <button class="clue correct-clue" data-correct="true"><span class="clue-emoji">🔴</span><strong>Red Ball</strong></button>
+                    <button class="clue"><span class="clue-emoji">🥫</span><strong>Food Can</strong></button>
+                    <button class="clue correct-clue" data-correct="true"><span class="clue-emoji">🎀</span><strong>Blue Ribbon</strong></button>
+                    <button class="clue"><span class="clue-emoji">🪵</span><strong>Old Stick</strong></button>
+                    <button class="clue correct-clue" data-correct="true"><span class="clue-emoji">🐾</span><strong>Paw Print</strong></button>
+                    <button class="clue"><span class="clue-emoji">🍎</span><strong>Apple</strong></button>
+                </div>
+                <p class="feedback"></p>
+                <button class="next-button locked" data-next="scene-4">Continue ▶</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- SCENE 4 -->
+    <section class="scene" id="scene-4">
+        <div class="scene-background afternoon">
+            <div class="story-card">
+                <span class="chapter">SCENE 4 OF 6</span>
+                <h2>👦👧 The Owners Search</h2>
+                <p>They begin searching around the neighborhood.</p>
+            </div>
+            <div class="game-card">
+                <h3>🔍 Where should the owners search first?</h3>
+                <div class="choices">
+                    <button class="choice" data-message="The candle shop is busy."><span class="choice-image">🕯️</span><strong>Search the candle shop</strong><small>Maybe someone saw Chuchai near the candle stand.</small></button>
+                    <button class="choice correct-choice" data-correct="true" data-message="They notice paw prints on the ground!"><span class="choice-image">🐾</span><strong>Follow the paw prints</strong><small>Look for the trail Chuchai left behind.</small></button>
+                    <button class="choice" data-message="The playground is empty."><span class="choice-image">🛝</span><strong>Search the playground</strong><small>Check the place where dogs usually play.</small></button>
+                </div>
+                <p class="feedback"></p>
+                <button class="next-button locked" data-next="scene-5">Continue ▶</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- SCENE 5 -->
+    <section class="scene" id="scene-5">
+        <div class="scene-background trail">
+            <div class="story-card">
+                <span class="chapter">SCENE 5 OF 6</span>
+                <h2>🐾 Follow the Paw Trail</h2>
+                <p>Follow the paw prints in order.</p>
+            </div>
+            <div class="game-card">
+                <h3>🐾 Follow Chuchai's paw prints</h3>
+                <p class="instruction">Tap 1 → 2 → 3 → 4 → 5 → 6.</p>
+                <div class="paw-grid">
+                    <button class="paw" data-paw="1">🐾 <span>1</span></button>
+                    <button class="paw" data-paw="2">🐾 <span>2</span></button>
+                    <button class="paw" data-paw="3">🐾 <span>3</span></button>
+                    <button class="paw" data-paw="4">🐾 <span>4</span></button>
+                    <button class="paw" data-paw="5">🐾 <span>5</span></button>
+                    <button class="paw" data-paw="6">🐾 <span>6</span></button>
+                </div>
+                <p class="feedback"></p>
+                <button class="next-button locked" data-next="scene-6">Continue ▶</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- SCENE 6 -->
+    <section class="scene" id="scene-6">
+        <div class="ending-card">
+            <div class="happy-dog">🐶❤️</div>
+            <span class="chapter">FINAL SCENE</span>
+            <h1>🏠 Chuchai Comes Home!</h1>
+            <div id="final-result"></div>
+            <button class="main-button" id="play-again">🔄 Play Again</button>
+        </div>
+    </section>
+
+    <!-- BAD ENDING -->
+    <section class="scene" id="scene-lost">
+        <div class="lost-card">
+            <h1>😢 Chuchai Is Lost</h1>
+            <p>The forest is getting darker...</p>
+            <div class="lost-card-actions">
+                <button class="main-button danger-button" id="try-again">🔄 Try Again</button>
+                <button class="main-button secondary-button" id="start-over">🚀 Start Adventure</button>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<!-- MODAL -->
+<div id="game-modal" class="modal hidden">
+    <div class="modal-card">
+        <div id="modal-icon">🐶</div>
+        <h2 id="modal-title">Chuchai</h2>
+        <p id="modal-message"></p>
+        <button id="modal-button" class="main-button">Continue</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
